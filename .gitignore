@@ -1,0 +1,6 @@
+# NPM packages and binaries
+node_modules
+
+# built/generated resources
+coverage
+.brwud
