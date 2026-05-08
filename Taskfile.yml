@@ -1,0 +1,81 @@
+# Be sure to have direnv allow the .envrc file before running this
+#   OR load the variables from .envrc yourself
+
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+
+# Running commands looks like:
+# task TARGET:OBJECTIVE:action-AREA 
+# 
+# (see build/README.md)
+# 
+
+version: '3'
+
+vars:
+  PRESENTATION_REL:
+    sh: realpath --relative-to="{{.PROJECT_DIR}}" "{{.PRESENTATION_DIR}}"
+  DEV_REL:
+    sh: realpath --relative-to="{{.PROJECT_DIR}}" "{{.DEV_DIR}}"
+  BROWSER_DBG_MSG:
+    "Visit chrome://inspect/#remote-debugging to enable remote debugging"
+
+includes:
+  soi: ./build/_tasks.yml
+  octocat: ./build/octocat/_tasks.yml
+  assess: ./test/_tasks.yml
+
+tasks:
+  check_env:
+    cmds:
+      - echo $PROJECT_DIR
+      - echo $BEHAVIOR_DIR
+      - echo "Unix timestamp {{now | unixEpoch}}"
+      - echo $VERSION_NUM
+
+  start_browser:
+    silent: true
+    vars:
+      RUN_BROWSER_MSG: "To start browser run: 'chrometest --user-data-dir=$BRWUD_DIR'"
+    cmds:
+      - cmd: echo {{.RUN_BROWSER_MSG}}
+      - cmd: echo {{.BROWSER_DBG_MSG}}
+
+  start_browser_dbg:
+    silent: true
+    vars:
+      RUN_BROWSER_MSG: "To start browser run: 'chrometest --remote-debugging-port=$BRW_DBG_PORT --user-data-dir=$BRWUD_DIR'"
+    cmds:
+      - cmd: echo {{.RUN_BROWSER_MSG}}
+      - cmd: echo {{.BROWSER_DBG_MSG}}
+
+  start_browser_hdbg:
+    silent: true
+    vars:
+      RUN_BROWSER_MSG: "To start browser run: 'chrometest --headless --remote-debugging-port=$BRW_DBG_PORT --user-data-dir=$BRWUD_DIR'"
+    cmds:
+      - cmd: echo {{.RUN_BROWSER_MSG}}
+      - cmd: echo {{.BROWSER_DBG_MSG}}
+
+  clear_browser_userdir:
+    cmds:
+      - rm -rf {{.BRWUD_DIR}}/**
+
+  nitScript:
+    cmds:
+      - pnpm oxlint -c {{.PROJECT_DIR}}/.oxlintrc.json --tsconfig {{.PROJECT_DIR}}/jsconfig.json {{.CLI_ARGS}}
+
+  nitSheet:
+    cmds:
+      - pnpm stylelint -c {{.PROJECT_DIR}}/stylelint.config.mjs {{.CLI_ARGS}} --quiet-deprecation-warnings
+
+  sechkprjc:
+    silent: true
+    cmds:
+      - echo "To run a snyk test (be sure to setup/authenticate snyk first):"
+      - echo "snyk test --package-manager=pnpm --file=pnpm-lock.yaml --remote-repo-url="https://github.com/bharrisaplus/acni.git" --prune-repeated-subdependencies --source-dir=./source/behavior --org="
+
+  sechksrc:
+    silent: true
+    cmds:
+      - echo "To run a snyk code test (be sure to setup/authenticate snyk first):"
+      - echo "snyk code test --report --project-name=acni_web --target-reference=\"$(git branch --show-current)\" --remote-repo-url=\"https://github.com/bharrisaplus/acni\" --org="
