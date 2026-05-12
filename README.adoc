@@ -1,2 +1,10 @@
 = a.c.n.i
 ( A )nother ( C )ornell ( N )ote ( I )mplementation
+:toc:
+
+== Description
+Allows taking note taking with the addition sections for helpful metadata.
+
+
+== References
+See the https://en.wikipedia.org/wiki/Cornell_Notes[Cornell Notes system] for more info.
