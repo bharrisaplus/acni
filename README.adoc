@@ -1,4 +1,4 @@
-= a.c.n.i: ( A )nother ( C )ornell ( N )ote ( I )mplementation
+= a.c.n.i: (a)nother (c)ornell (n)ote (i)mplementation
 :toc:
 
 == Description
