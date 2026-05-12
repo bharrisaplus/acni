@@ -1,3 +1,2 @@
-# acni
-(A)nother (C)ornell (N)ote (I)mplementation
-
+= a.c.n.i
+( A )nother ( C )ornell ( N )ote ( I )mplementation
