@@ -1,5 +1,5 @@
 = a.c.n.i
-( A )nother ( C )ornell ( N )ote ( I )mplementation
+Another Cornell Note Implementation
 :toc:
 
 == Description
