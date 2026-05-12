@@ -1,0 +1,25 @@
+<svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<defs>
+		<symbol id="bmo">
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M468.75 468.75H31.25V343.75H468.75V468.75ZM62.5 375V437.5H437.5V375H62.5Z" fill="#4D3E3E"/>
+		</symbol>
+		<symbol id="reye">
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M469 281H219V31H469V281ZM250.25 62.25V249.75H437.75V62.25H250.25Z" fill="#4D3E3E"/>
+			<path d="M219 187.25H250.25V218.5H219V187.25Z" fill="#EC6B4E"/>
+			<path d="M219 156H250.25V187.25H219V156Z" fill="#884EEC"/>
+			<path d="M219 124.75H250.25V156H219V124.75Z" fill="#B2EC4E"/>
+		</symbol>
+		<symbol id="leye">
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M156 281H31V31H156V281ZM62.25 62.25V249.75H124.75V62.25H62.25Z" fill="#4D3E3E"/>
+			<path d="M124.75 93.5H156V124.75H124.75V93.5Z" fill="#EC6B4E"/>
+			<path d="M124.75 124.75H156V156H124.75V124.75Z" fill="#884EEC"/>
+			<path d="M124.75 156H156V187.25H124.75V156Z" fill="#B2EC4E"/>
+		</symbol>
+	</defs>
+
+	<g id="clr-lg">
+		<use href="#leye"/>
+		<use href="#reye"/>
+		<use href="#bmo"/>
+	</g>
+</svg>
