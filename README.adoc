@@ -1,6 +1,5 @@
 :imagesdir: ./distribution/common/assets/img/raster/logo
-= a.c.n.i image:robomug.png[icon]
-(a)nother (c)ornell (n)ote (i)mplementation
+= a.c.n.i image:robomug.png[icon]: (a)nother (c)ornell (n)ote (i)mplementation
 :toc:
 
 == Description
