@@ -30,6 +30,8 @@ tasks:
       - echo $PROJECT_DIR
       - echo $BEHAVIOR_DIR
       - echo "Unix timestamp {{now | unixEpoch}}"
+      - pug -V
+      - stylus -V
       - echo $VERSION_NUM
 
   start_browser:
