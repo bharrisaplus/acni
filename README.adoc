@@ -3,7 +3,7 @@
 :toc:
 
 == Description
-Allows taking note taking with the addition sections for helpful metadata.
+Allows taking note taking with additional sections for helpful metadata.
 
 
 == References
